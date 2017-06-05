@@ -1,7 +1,7 @@
 import {Directive, ElementRef, Input, AfterViewInit, HostListener} from '@angular/core';
 
 @Directive({
-    selector: '[FitText]'
+    selector: '[fittext]'
 })
 export class Ng4FittextDirective implements AfterViewInit {
 

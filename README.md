@@ -38,7 +38,7 @@ Import it in your Angular4 project like a module
     @Component({
       selector: 'hero',
       template: `<div #container class="hero">
-                    <h1 [fittext]="true" [activateOnResize]="true" [container]="container">RESIZES THIS TEXT</h1>
+                    <h1 [fittext]="true" [activateOnResize]="true" [container]="container">RESIZE THIS TEXT</h1>
                 </div>`
     })
     
@@ -53,8 +53,8 @@ Import it in your Angular4 project like a module
   | container | the container to fit | ElementRef
   | activateOnResize | enable/disable the auto-scale in case of window resize | true or false (default false)
   | compression | compression rate. How fast should the text resize | number (default 1)
-  | minFontSize | enable/disable the autofit in case of window resize | number (default -infinity)
-  | MaxFontSize | enable/disable the autofit in case of window resize | number (default bitSize limit)
+  | minFontSize | minimum font size allowed on element | number (default -infinity)
+  | MaxFontSize | maximum font size allowed on element | number (default bitSize limit)
 
 
 ### Development
@@ -67,8 +67,6 @@ fittext.js was pretty useful up until nobody liked jquery anymore. There was an 
 ### Todos
 
  - Write tests
- - default max font size
- - default min font size
 
 License
 ----
