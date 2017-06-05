@@ -1,0 +1,46 @@
+{
+  "name": "ng4-fittext",
+  "version": "1.0.0",
+  "description": "An Angular4.* directive to auto-scale the font-size of an element to fit it's parent element.",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sollenne/ng4-fittext.git"
+  },
+  "keywords": [
+    "angular2",
+    "angular4",
+    "responsive",
+    "responsive font",
+    "fittext",
+    "fittext.js",
+    "ng-fittext",
+    "ng-fittext angular2",
+    "ng-fittext angular4",
+    "ng2-fittext",
+    "ng4-fittext",
+    "fit-text",
+    "fit text",
+    "fit",
+    "text"
+  ],
+  "author": "Rich Sollenne",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sollenne/ng4-fittext/issues"
+  },
+  "homepage": "https://github.com/sollenne/ng4-fittext#readme",
+  "dependencies": {
+    "@angular/core": "^4.1.3",
+    "rxjs": "^5.4.0"
+  },
+  "devDependencies": {
+    "typescript": "^2.3.4"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}
