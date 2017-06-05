@@ -5,10 +5,9 @@ import {Directive, ElementRef, Input, AfterViewInit, HostListener} from '@angula
 })
 export class Ng4FittextDirective implements AfterViewInit {
 
-    @Input('appFitTextDirective') fittext: boolean;
+    @Input('fittext') fittext: boolean;
     @Input('container') container: HTMLDivElement;
     @Input('activateOnResize') activateOnResize = true;
-    @Input('activateOnInputEvents') activateOnInputEvents: boolean;
     @Input('maxFontSize') maxFontSize: number;
     @Input('minFontSize') minFontSize: number;
     @Input('compression') compression: number;
