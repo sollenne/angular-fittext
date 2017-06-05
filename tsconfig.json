@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es5",
+    "sourceMap": true,
+    "inlineSources": false,
+    "declaration": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "stripInternal": true,
+    "skipLibCheck": true
+  },
+  "files": [
+    "ng4fittext.ts",
+    "ng4fittext.d.ts",
+    "index.ts",
+    "src/ng4fittext.directive.spec.ts"
+  ]
+}
