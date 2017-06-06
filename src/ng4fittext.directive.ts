@@ -5,51 +5,35 @@ import {Directive, ElementRef, Input, AfterViewInit, HostListener} from '@angula
 })
 export class Ng4FittextDirective implements AfterViewInit {
 
-    @Input('fittext') fittext: boolean;
+    @Input('fittext') fittext: boolean = true;
     @Input('container') container: HTMLDivElement;
-    @Input('activateOnResize') activateOnResize = true;
-    @Input('maxFontSize') maxFontSize: number;
-    @Input('minFontSize') minFontSize: number;
-    @Input('compression') compression: number;
+    @Input('activateOnResize') activateOnResize: boolean = true;
+    @Input('minFontSize') minFontSize: number = -1 / 0;
+    @Input('maxFontSize') maxFontSize: number = 1 / 0;
+    @Input('compression') compression: number = 1;
 
-    public settings: any;
-    public fontSize: number;
-    public containerWidth: number;
-
-    constructor(
-        public el: ElementRef
-    ) {
-
-        this.settings = {
-            'minFontSize': -1 / 0,
-            'maxFontSize': 1 / 0,
-            'compression': 0.9
-        };
-
-        this.compression = this.compression || this.settings.compression;
-        this.minFontSize = this.minFontSize || this.settings.minFontSize;
-        this.maxFontSize = this.maxFontSize || this.settings.maxFontSize;
-    }
+    constructor(public el: ElementRef) {}
 
     private setFontSize = (): void => {
-        const windowWidth = window.screen.width;
-        const parentWidth = this.container.parentElement.clientWidth;
-        parentWidth > windowWidth ? this.containerWidth = windowWidth : this.containerWidth = parentWidth;
+        if (this.fittext) {
+            let containerWidth, fontSize;
+            const windowWidth = window.screen.width;
+            const parentWidth = this.container.parentElement.clientWidth;
+            parentWidth > windowWidth ? containerWidth = windowWidth : containerWidth = parentWidth;
+            fontSize = Math.max(Math.min(containerWidth / (this.compression * 10), this.maxFontSize), this.minFontSize);
 
-        this.fontSize = Math.max(Math.min(this.containerWidth / (this.compression * 10), this.maxFontSize), this.minFontSize);
-        return this.el.nativeElement.style.setProperty('font-size', (this.fontSize).toString() + 'px');
+            return this.el.nativeElement.style.setProperty('font-size', (fontSize).toString() + 'px');
+        }
     };
 
     @HostListener('window:resize', ['$event'])
     public onResize = (): void => {
-        if (this.activateOnResize && this.fittext) {
+        if (this.activateOnResize) {
             this.setFontSize();
         }
     };
 
     ngAfterViewInit() {
-        if (this.fittext) {
-            this.setFontSize();
-        }
+        this.setFontSize();
     }
 }

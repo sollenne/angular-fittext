@@ -6,13 +6,15 @@ import { TestBed, ComponentFixture } from '@angular/core/testing';
 
 @Component({
     template: `
-        <h1 [fittext]="true"
-            [activateOnResize]="true"
-            [container]="fittext"
-            [maxFontSize]="160"
-            [compression]="0.7">
-            TEST ELEMENT TEXT
-        </h1>`
+        <div #container>
+            <h1 [fittext]
+                [activateOnResize]="true"
+                [container]="container"
+                [maxFontSize]="160"
+                [compression]="0.7">
+                TEST ELEMENT TEXT
+            </h1>
+        </div>`
 })
 class TestFittextComponent {
 }
