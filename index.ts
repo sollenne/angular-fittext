@@ -1,1 +1,1 @@
-export {Ng4FittextModule} from './src/ng2fittext.module';
+export {Ng4FittextModule} from './src/ng4fittext.module';
