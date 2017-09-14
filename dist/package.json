@@ -2,7 +2,7 @@
   "name": "ng4-fittext",
   "version": "1.1.1",
   "description": "An Angular4.* directive to auto-scale the font-size of an element to fit it's parent element.",
-  "main": "index.ts",
+  "main": "bundles/ng4-fittext.umd.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "packagr": "ng-packagr -p ng-package.json"
@@ -52,5 +52,8 @@
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
-  }
+  },
+  "module": "ng4-fittext/ng4-fittext.es5.js",
+  "es2015": "ng4-fittext/ng4-fittext.js",
+  "typings": "ng4-fittext.d.ts"
 }
