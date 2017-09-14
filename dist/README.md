@@ -22,7 +22,7 @@ Import it in your Angular4 project like a module
 
 1) Declare it in your module
     ```sh
-    import {Ng4FittextModule} from "ng4-fittext";
+    import {Ng4FittextModule} from 'ng4-fittext';
     @NgModule({
       imports: [
         Ng4FittextModule
@@ -32,6 +32,8 @@ Import it in your Angular4 project like a module
     ```
     
 2) Use it in your components
+    
+    **The element that contains this directive should have a CSS width!**
     ```sh
    import {Component} from '@angular/core';
    
