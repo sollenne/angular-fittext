@@ -1,11 +1,28 @@
-.idea
-# Node generated files
+
+# compiled output
+/dist
+/tmp
+/deploy
+/screenshots
+
+# dependencies
 node_modules
-npm-debug.log
-# OS generated files
-Thumbs.db
-.DS_Store
-# Ignored files
+
+# IDEs
+/.idea
+/.vscode
+
+# misc
 *.js
 *.map
 *.d.ts
+.DS_Store
+Thumbs.db
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/.chrome
+/.git

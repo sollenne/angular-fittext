@@ -63,7 +63,7 @@ Import it in your Angular4 project like a module
   | `[activateOnResize]` (optional) | enable/disable the auto-scale in case of window resize | boolean (default `true`)
   | `[compression]` (optional) | compression rate. How fast should the text resize | number (default `1`)
   | `[minFontSize]` (optional) | minimum font size allowed on element | number (default -infinity)
-  | `[minFontSize]` (optional) | maximum font size allowed on element | number (default bitSize limit)
+  | `[maxFontSize]` (optional) | maximum font size allowed on element | number (default bitSize limit)
 
 
 ### Development
