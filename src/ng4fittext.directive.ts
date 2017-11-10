@@ -1,4 +1,4 @@
-import {Directive, ElementRef, Input, AfterViewInit, HostListener} from '@angular/core';
+import { AfterViewInit, Directive, ElementRef, HostListener, Input, OnChanges, SimpleChanges  } from '@angular/core';
 
 @Directive({
     selector: '[fittext]'
@@ -22,9 +22,18 @@ export class Ng4FittextDirective implements AfterViewInit {
             parentWidth > windowWidth ? containerWidth = windowWidth : containerWidth = parentWidth;
             fontSize = Math.max(Math.min(containerWidth / (this.compression * 10), this.maxFontSize), this.minFontSize);
 
+            // console.log('Ng4FittextDirective#setFontSize; windowWidth:', windowWidth, '; parentWidth:', parentWidth, '; containerWidth:', containerWidth, '; fontSize:', fontSize, '; cmpression: ', this.compression);
             return this.el.nativeElement.style.setProperty('font-size', (fontSize).toString() + 'px');
         }
     };
+
+    ngOnChanges(changes: SimpleChanges) {
+        // if compression is changed calc and set new font size
+        if (changes['compression'] && !changes['compression'].firstChange) {
+
+            this.setFontSize();
+        }
+    }
 
     @HostListener('window:resize', ['$event'])
     public onResize = (): void => {
