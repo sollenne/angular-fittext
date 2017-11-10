@@ -21,8 +21,7 @@ export class Ng4FittextDirective implements AfterViewInit {
             const parentWidth = this.container.parentElement.clientWidth;
             parentWidth > windowWidth ? containerWidth = windowWidth : containerWidth = parentWidth;
             fontSize = Math.max(Math.min(containerWidth / (this.compression * 10), this.maxFontSize), this.minFontSize);
-
-            // console.log('Ng4FittextDirective#setFontSize; windowWidth:', windowWidth, '; parentWidth:', parentWidth, '; containerWidth:', containerWidth, '; fontSize:', fontSize, '; cmpression: ', this.compression);
+            
             return this.el.nativeElement.style.setProperty('font-size', (fontSize).toString() + 'px');
         }
     };
