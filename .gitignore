@@ -4,6 +4,8 @@
 /tmp
 /deploy
 /screenshots
+/.ng_build
+/.ng_pkg_build
 
 # dependencies
 node_modules

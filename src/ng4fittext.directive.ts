@@ -1,9 +1,9 @@
-import {Directive, ElementRef, Input, AfterViewInit, HostListener} from '@angular/core';
+import { AfterViewInit, Directive, ElementRef, HostListener, Input, OnChanges, SimpleChanges  } from '@angular/core';
 
 @Directive({
     selector: '[fittext]'
 })
-export class Ng4FittextDirective implements AfterViewInit {
+export class Ng4FittextDirective implements AfterViewInit, OnChanges {
 
     @Input('fittext') fittext: boolean = true;
     @Input('container') container: HTMLDivElement;
@@ -25,6 +25,14 @@ export class Ng4FittextDirective implements AfterViewInit {
             return this.el.nativeElement.style.setProperty('font-size', (fontSize).toString() + 'px');
         }
     };
+
+    ngOnChanges(changes: SimpleChanges) {
+
+        if (changes['compression'] && !changes['compression'].firstChange) {
+
+            this.setFontSize();
+        }
+    }
 
     @HostListener('window:resize', ['$event'])
     public onResize = (): void => {
