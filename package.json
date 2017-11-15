@@ -5,7 +5,9 @@
   "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "packagr": "ng-packagr -p ng-package.json"
+    "packagr": "ng-packagr -p ng-package.json",
+    "pack": "npm run update && npm run packagr && cd dist && npm pack && cd -",
+    "update": "rm -Rf node_modules package-lock.json && npm install"
   },
   "repository": {
     "type": "git",
