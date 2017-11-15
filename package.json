@@ -1,6 +1,6 @@
 {
   "name": "ng4-fittext",
-  "version": "1.1.5",
+  "version": "1.2.0",
   "description": "An Angular4.* directive to auto-scale the font-size of an element to fit it's parent element.",
   "main": "index.ts",
   "scripts": {
