@@ -26,10 +26,8 @@ export class Ng4FittextDirective implements AfterViewInit, OnChanges {
         }
     };
 
-    ngOnChanges(changes: SimpleChanges) {
-
+    public ngOnChanges(changes: SimpleChanges): void {
         if (changes['compression'] && !changes['compression'].firstChange) {
-
             this.setFontSize();
         }
     }
