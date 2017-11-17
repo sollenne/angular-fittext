@@ -1,37 +1,40 @@
-# ng4-fittext
+# angular-fittext 
+[Change Log](https://github.com/sollenne/angular-fittext/releases)
 
-Angular4 directive (typescript) to do what fittext.js did when jquery was cool.
+Angular directive (typescript) to do what fittext.js did when jquery was cool.
+This auto-scales the font size to fit the width of it's container. 
 
-Basically, This auto-scales the font size to fit the width of it's container. 
+### Versioning & What heppened to ng4-fittext?
+This package was renamed angular-fittext to get rid of the ng version binding. This will follow the updates for angular and will not need to be bound specifically to a version of angular. We have kept the same github repo, but renamed it to angular-fittext. 
 
-
-### Demo
-
-coming soon
+### Todos
+ - Add demo
 
 ### Installation
 
 Install the library
 ```sh
-$ npm install --save ng4-fittext
+$ npm install --save angular-fittext
 ```
 
 ### Usage
 
-Import it in your Angular4 project like a module
+Import it in your Angular project as a module
 
 1) Declare it in your module
     ```sh
-    import {Ng4FittextModule} from 'ng4-fittext';
+    import {AngularFittextModule} from 'angular-fittext';
+    
     @NgModule({
       imports: [
-        Ng4FittextModule
+        AngularFittextModule,
+        ...
       ]
     })
     
     ```
     
-2) Use it in your components
+2) Use it in a component
     
     **The element that contains this directive should have a CSS width!**
     ```sh
@@ -39,47 +42,34 @@ Import it in your Angular4 project like a module
    
     @Component({
       selector: 'hero',
-      template: `<div #heroContainer class="hero">
-                    <h1 [fittext]
-                        [activateOnResize]="true" 
-                        [container]="heroContainer"
-                        [minFontSize]="16"
-                        [maxFontSize]="200"
-                        [compression]="1.2">
-                        RESIZE THIS TEXT
-                    </h1>
-                </div>`
+      template: `
+        <div style="align-content: center;">
+            <div style="width: 20%; height: 20%; margin: 0 auto;">
+                <div fittext>test</div>
+            </div>
+         </div>`
     })
     
-    export class HeroComponent {}
+    export class AppComponent {}
     ```
 
    Parameters:
     
   | Parameter | Description | Values |
   | --- | --- | --- |
-  | `[fittext]` (required) | Selector for the directive. It accepts a boolean value but defaults `true`. You can disable the directive for this element by passing in `false`. But why? just remove it to disable. | boolean (default `true`)
-  | `[container]` (required) | Your fittext elements parent. Must be a `div` | ElementRef (`<div>`)
-  | `[activateOnResize]` (optional) | enable/disable the auto-scale in case of window resize | boolean (default `true`)
-  | `[compression]` (optional) | compression rate. How fast should the text resize | number (default `1`)
-  | `[minFontSize]` (optional) | minimum font size allowed on element | number (default -infinity)
-  | `[maxFontSize]` (optional) | maximum font size allowed on element | number (default bitSize limit)
+  | `fittext` (required) | Selector for the directive. | boolean (defaults to `true`)
+  | `[activateOnResize]` (optional) | enable/disable the auto-scale in case of window resize | boolean (defaults to `true`)
+  | `[compression]` (optional) | compression rate. How fast should the text resize? *As of v1.2.0, this can receive a dynamic value. | number (defaults to `1`)
+  | `[minFontSize]` (optional) | minimum font size allowed on element | number (defaults to `0`)
+  | `[maxFontSize]` (optional) | maximum font size allowed on element | number (defaults to `infinity`)
 
 
 ### Development
-
 Want to contribute? Great!
 Simply, clone the repository!
 
-fittext.js was pretty useful up until nobody liked jquery anymore. There was an existing ng-1 lib and a sketchy ng-2 directive. This should take care of ng-4+.
-
-### Todos
-
- - Write tests
-
 License
 ----
-
 ISC
 
 

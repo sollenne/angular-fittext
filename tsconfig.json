@@ -12,9 +12,9 @@
     "skipLibCheck": true
   },
   "files": [
-    "ng4fittext.ts",
-    "ng4fittext.d.ts",
+    "angular-fittext.ts",
+    "angular-fittext.d.ts",
     "index.ts",
-    "src/ng4fittext.directive.spec.ts"
+    "src/angular-fittext.directive.spec.ts"
   ]
 }

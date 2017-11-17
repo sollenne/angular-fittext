@@ -1,21 +1,17 @@
 /* tslint:disable:no-unused-variable */
-import { Ng4FittextDirective } from './ng4fittext.directive';
 import { Component } from "@angular/core";
 import { TestBed, ComponentFixture } from '@angular/core/testing';
-
+import { AngularFittextDirective } from './angular-fittext.directive';
 
 @Component({
     template: `
-        <div #container>
-            <h1 [fittext]
-                [activateOnResize]="true"
-                [container]="container"
-                [maxFontSize]="160"
-                [compression]="0.7">
-                TEST ELEMENT TEXT
-            </h1>
+        <div style="align-content: center;">
+            <div style="width: 20%; height: 20%; margin: 0 auto;">
+                <div fittext>test</div>
+            </div>
         </div>`
 })
+
 class TestFittextComponent {
 }
 
@@ -24,7 +20,7 @@ describe('Ng4FittextDirective', () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            declarations: [TestFittextComponent, Ng4FittextDirective]
+            declarations: [TestFittextComponent, AngularFittextDirective]
         });
         fixture = TestBed.createComponent(TestFittextComponent);
     });
