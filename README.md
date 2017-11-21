@@ -1,14 +1,13 @@
 # angular-fittext 
 [Change Log](https://github.com/sollenne/angular-fittext/releases)
 
+### [Heres the demo!](http://sollenne.com/angular-fittext-demo/)
+
 Angular directive (typescript) to do what fittext.js did when jquery was cool.
 This auto-scales the font size to fit the width of it's container. 
 
 ### Versioning & What heppened to ng4-fittext?
 This package was renamed angular-fittext to get rid of the ng version binding. This will follow the updates for angular and will not need to be bound specifically to a version of angular. We have kept the same github repo, but renamed it to angular-fittext. 
-
-### Todos
- - Add demo
 
 ### Installation
 
