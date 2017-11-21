@@ -15,7 +15,7 @@ import { AngularFittextDirective } from './angular-fittext.directive';
 class TestFittextComponent {
 }
 
-describe('Ng4FittextDirective', () => {
+describe('AngularFittextDirective', () => {
     let fixture: ComponentFixture<TestFittextComponent>;
 
     beforeEach(() => {
