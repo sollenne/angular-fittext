@@ -1,5 +1,7 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
+    "outDir": "./dist/out-tsc",
     "module": "commonjs",
     "moduleResolution": "node",
     "target": "es5",
@@ -9,12 +11,13 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "stripInternal": true,
-    "skipLibCheck": true
-  },
-  "files": [
-    "angular-fittext.ts",
-    "angular-fittext.d.ts",
-    "index.ts",
-    "src/angular-fittext.directive.spec.ts"
-  ]
+    "skipLibCheck": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ]
+  }
 }

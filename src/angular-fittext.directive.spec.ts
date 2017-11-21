@@ -1,5 +1,5 @@
 /* tslint:disable:no-unused-variable */
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { AngularFittextDirective } from './angular-fittext.directive';
 
