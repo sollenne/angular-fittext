@@ -61,6 +61,7 @@ Import it in your Angular project as a module
   | `[compression]` (optional) | compression rate. How fast should the text resize? *As of v1.2.0, this can receive a dynamic value. | number (defaults to `1`)
   | `[minFontSize]` (optional) | minimum font size allowed on element | number (defaults to `0`)
   | `[maxFontSize]` (optional) | maximum font size allowed on element | number (defaults to `infinity`)
+  | `[delay]` (optional) | time to delay resize (in nanoseconds) | number (defaults to `100`)
 
 
 ### Development
