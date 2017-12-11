@@ -73,7 +73,6 @@ export class AngularFittextDirective implements AfterViewInit, OnInit, OnChanges
   }
 
   private setFontSize = (): void => {
-    console.log('suka');
     this.resizeTimeout = setTimeout(
       (() => {
         if (this.fittextElement.offsetHeight * this.fittextElement.offsetWidth !== 0) {
