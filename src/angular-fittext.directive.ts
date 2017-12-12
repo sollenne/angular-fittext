@@ -15,12 +15,13 @@ import {
 })
 export class AngularFittextDirective implements AfterViewInit, OnInit, OnChanges {
 
-  @Input() fittext? = true;
-  @Input() compression? = 1;
-  @Input() activateOnResize? = true;
+  @Input() fittext?= true;
+  @Input() compression?= 1;
+  @Input() activateOnResize?= true;
   @Input() minFontSize?: number | 'inherit' = 0;
   @Input() maxFontSize?: number | 'inherit' = Number.POSITIVE_INFINITY;
-  @Input() delay? = 100;
+  @Input() delay?= 100;
+  @Input() ngModel;
 
   private fittextParent: HTMLElement;
   private fittextElement: HTMLElement;
@@ -63,6 +64,10 @@ export class AngularFittextDirective implements AfterViewInit, OnInit, OnChanges
 
   public ngOnChanges(changes: SimpleChanges) {
     if (changes['compression'] && !changes['compression'].firstChange) {
+      this.setFontSize();
+    }
+    if (changes['ngModel']) {
+      this.fittextElement.innerHTML = this.ngModel;
       this.setFontSize();
     }
   }
