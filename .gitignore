@@ -15,7 +15,6 @@ node_modules
 /.vscode
 
 # misc
-package-lock.json
 *.js
 *.map
 *.d.ts
