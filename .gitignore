@@ -27,4 +27,4 @@ Thumbs.db
 npm-debug.log
 testem.log
 /.chrome
-/.git
+angular-fittext-*.tgz
