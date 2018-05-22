@@ -62,6 +62,7 @@ Import it in your Angular project as a module
   | `[minFontSize]` (optional) | minimum font size allowed on element | number (defaults to `0`)
   | `[maxFontSize]` (optional) | maximum font size allowed on element | number (defaults to `infinity`)
   | `[delay]` (optional) | time to delay resize (in nanoseconds) | number (defaults to `100`)
+  | `[fontUnit]` (optional) | font unit to apply to the fontSize | px, em, ... (defaults to `px`)
 
 
 ### Development

@@ -15,7 +15,6 @@ node_modules
 /.vscode
 
 # misc
-package-lock.json
 *.js
 *.map
 *.d.ts
@@ -28,4 +27,4 @@ Thumbs.db
 npm-debug.log
 testem.log
 /.chrome
-/.git
+angular-fittext-*.tgz
