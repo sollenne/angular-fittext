@@ -1,7 +1,7 @@
 # angular-fittext 
 [Change Log](https://github.com/sollenne/angular-fittext/releases)
 
-### [Heres the demo!](http://sollenne.com/angular-fittext-demo/)
+### [Heres the demo!](https://stackblitz.com/edit/fittext)
 
 Angular directive (typescript) to do what fittext.js did when jquery was cool.
 This auto-scales the font size to fit the width of it's container. 
