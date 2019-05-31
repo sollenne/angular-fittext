@@ -1,17 +1,17 @@
-import {AfterViewInit, Directive, ElementRef, HostListener, Input, OnChanges, OnInit, Renderer2, SimpleChanges} from '@angular/core';
+import { AfterViewInit, Directive, ElementRef, HostListener, Input, OnChanges, OnInit, Renderer2, SimpleChanges } from '@angular/core';
 
 @Directive({
   selector: '[fittext]'
 })
 export class AngularFittextDirective implements AfterViewInit, OnInit, OnChanges {
 
-  @Input() fittext? = true;
-  @Input() compression? = 1;
-  @Input() activateOnResize? = true;
+  @Input() fittext?= true;
+  @Input() compression?= 1;
+  @Input() activateOnResize?= true;
   @Input() minFontSize?: number | 'inherit' = 0;
   @Input() maxFontSize?: number | 'inherit' = Number.POSITIVE_INFINITY;
-  @Input() delay? = 100;
-  @Input() ngModel;
+  @Input() delay?= 100;
+  @Input() innerHTML;
   @Input() fontUnit?: 'px' | 'em' | string = 'px';
 
   private fittextParent: HTMLElement;
@@ -50,20 +50,22 @@ export class AngularFittextDirective implements AfterViewInit, OnInit, OnChanges
   }
 
   public ngAfterViewInit() {
-    this.setFontSize();
+    this.setFontSize(0);
   }
 
   public ngOnChanges(changes: SimpleChanges) {
     if (changes['compression'] && !changes['compression'].firstChange) {
-      this.setFontSize();
+      this.setFontSize(0);
     }
-    if (changes['ngModel']) {
-      this.fittextElement.innerHTML = this.ngModel;
-      this.setFontSize();
+    if (changes['innerHTML']) {
+      this.fittextElement.innerHTML = this.innerHTML;
+      if (!changes['innerHTML'].firstChange) {
+        this.setFontSize(0);
+      }
     }
   }
 
-  private setFontSize = (): void => {
+  private setFontSize = (delay: number = this.delay): void => {
     this.resizeTimeout = setTimeout(
       (() => {
         if (this.fittextElement.offsetHeight * this.fittextElement.offsetWidth !== 0) {
@@ -73,7 +75,7 @@ export class AngularFittextDirective implements AfterViewInit, OnInit, OnChanges
           this.setStyles(this.calculateNewFontSize(), this.lineHeight, this.display);
         }
       }).bind(this),
-      this.delay
+      delay
     );
   };
 
